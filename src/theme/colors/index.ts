@@ -1,31 +1,33 @@
 export const colors = {
-    // Background System
-    bg_light: "#FFF",
-    bg_orange: "#FF8A00",
+  // Background System
+  bg_light: "#FFF",
+  bg_orange: "#FF8A00",
 
-    // Texts
-    text_light: "#FFF",
-    text_dark: "#000",
-    text_orange: "#FF8A00",
-    text_blue: "#217AFF",
-    text_gray: "#BDBDBD",
-    text_success: "#007026",
+  // Texts
+  text_light: "#FFF",
+  text_dark: "#000",
+  text_orange: "#FF8A00",
+  text_blue: "#217AFF",
+  text_gray: "#BDBDBD",
+  text_success: "#007026",
 
-    // Buttons
-    btn_dark: "#000",
-    btn_danger: "#FF4545",
-    btn_success: "#007026",
-    btn_orange: "#FF8A00",
-    btn_blue: "#217AFF",
+  // Buttons
+  btn_dark: "#000",
+  btn_danger: "#FF4545",
+  btn_success: "#007026",
+  btn_orange: "#FF8A00",
+  btn_blue: "#217AFF",
+  btn_purple: "#8F00FF",
+  btn_purple_hover: "#7e00e0",
 
-    // Colors
-    light_gray: "#F6F6F6",
-    gray: "#E8E8E8",
-    dark_gray: "#BDBDBD",
-    very_dark_gray: "#5E5E5E",
-    danger: "#FF4545",
-    success: "#007026",
-    orange: "#FF8A00",
-    blue: "#217AFF",
-    black: "#000",
+  // Colors
+  light_gray: "#F6F6F6",
+  gray: "#E8E8E8",
+  dark_gray: "#BDBDBD",
+  very_dark_gray: "#5E5E5E",
+  danger: "#FF4545",
+  success: "#007026",
+  orange: "#FF8A00",
+  blue: "#217AFF",
+  black: "#000",
 };
