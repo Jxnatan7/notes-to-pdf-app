@@ -1,6 +1,7 @@
 import {TouchableOpacity} from "react-native";
 import {Box, Text} from "../../theme";
 import {useNavigation} from "@react-navigation/native";
+import {shareNote} from "../../services/shareNote";
 
 export const NoteName = ({
   name,
@@ -19,7 +20,8 @@ export const NoteName = ({
   return (
     <TouchableOpacity
       activeOpacity={0.8}
-      onPress={() => handlePDFViewNavigation(pdfFilePath)}>
+      onPress={() => handlePDFViewNavigation(pdfFilePath)}
+      onLongPress={() => shareNote(pdfFilePath)}>
       <Box
         mt="m"
         backgroundColor="dark_gray"

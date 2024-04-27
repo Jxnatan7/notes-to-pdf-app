@@ -1,6 +1,6 @@
-export const getNoteName = () => {
-  let sequencial = -1;
+let sequencial = -1;
 
+export const getNoteName = () => {
   const dataAtual = new Date();
   const dia = String(dataAtual.getDate()).padStart(2, "0");
   const mes = String(dataAtual.getMonth() + 1).padStart(2, "0");
