@@ -2,6 +2,8 @@ import {TouchableOpacity} from "react-native";
 import {Box, Text} from "../../theme";
 import {useNavigation} from "@react-navigation/native";
 import {shareNote} from "../../services/shareNote";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import {useState} from "react";
 
 export const NoteName = ({
   name,
@@ -24,13 +26,17 @@ export const NoteName = ({
       onLongPress={() => shareNote(pdfFilePath)}>
       <Box
         mt="m"
-        backgroundColor="dark_gray"
         width="100%"
         borderRadius={10}
+        borderBottomColor="btn_dark"
+        borderBottomWidth={1}
+        flexDirection="row"
+        gap="m"
         p="s">
-        <Text variant="button" fontWeight="bold">
+        <Text variant="button" fontWeight="bold" color="text_orange">
           {name}
         </Text>
+        <Ionicons name="add-circle" size={20} color="#000" />
       </Box>
     </TouchableOpacity>
   );

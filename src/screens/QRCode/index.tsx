@@ -1,8 +1,8 @@
-import { RNCamera } from "react-native-camera";
+import {RNCamera} from "react-native-camera";
 import QRCodeScanner from "react-native-qrcode-scanner";
-import { BackButton } from "../../components/BackButton";
-import { useNavigation } from "@react-navigation/native";
-import { downloadNotePDF } from "../../services/downloadNotePDF";
+import {useNavigation} from "@react-navigation/native";
+import {downloadNotePDF} from "../../services/downloadNotePDF";
+import {Header} from "../../components/Header";
 
 export default function QRCode() {
   const navigation = useNavigation();
@@ -10,16 +10,19 @@ export default function QRCode() {
     if (!url) return;
 
     // @ts-ignore
-    navigation.navigate("entry", { message: true });
+    navigation.navigate("entry", {message: true});
 
     await downloadNotePDF(url);
   };
   return (
     <QRCodeScanner
-      onRead={({ data }) => returnQrCodeResult(data)}
+      onRead={({data}) => returnQrCodeResult(data)}
       flashMode={RNCamera.Constants.FlashMode.on}
-      // @ts-ignore
-      topContent={<BackButton navigation={navigation} />}
+      cameraStyle={{flex: 1, height: "80%"}}
+      cameraContainerStyle={{backgroundColor: "#FFF"}}
+      bottomViewStyle={{display: "none"}}
+      topContent={<Header screenName="QRCODE" backButton />}
+      topViewStyle={{backgroundColor: "#FFF"}}
     />
   );
 }

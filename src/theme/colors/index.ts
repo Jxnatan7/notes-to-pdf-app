@@ -1,6 +1,7 @@
 export const colors = {
   // Background System
   bg_light: "#FFF",
+  bg_gray_light: "#F2F2F2",
   bg_orange: "#FF8A00",
 
   // Texts

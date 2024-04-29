@@ -3,12 +3,16 @@ import api from "../config/axiosConfig";
 import RNFS from "react-native-fs";
 import {getNoteName} from "./getNoteName";
 import Toast from "react-native-toast-message";
+import {Alert} from "react-native";
 
 const showSuccessToast = () => {
   Toast.show({
     type: "success",
     text1: "Sucesso!",
     text2: "O seu download foi concluído! 🎉",
+    onPress() {
+      Alert.alert("Acesse MINHAS NOTAS para ver as suas notas baixadas");
+    },
   });
 };
 
@@ -23,7 +27,6 @@ const showErrorToast = () => {
 export const downloadNotePDF = async (url: string) => {
   try {
     const response = await api.get(`/note-to-pdf?url=${url}`);
-
     const fileName = getNoteName();
 
     const path = `${RNFS.DownloadDirectoryPath}/minhas-notas/${fileName}.pdf`;

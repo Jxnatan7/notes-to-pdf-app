@@ -6,6 +6,7 @@ import {getAllNotesDownloaded} from "../../services/getAllNotesDownloaded";
 import {BackButton} from "../../components/BackButton";
 import {useNavigation} from "@react-navigation/native";
 import {NoteName} from "../../components/NoteName";
+import {Header} from "../../components/Header";
 
 type NoteProps = {
   fileName: string;
@@ -13,21 +14,20 @@ type NoteProps = {
 };
 
 export default function MyNotes() {
-  const navigation = useNavigation();
-
   const [notes, setNotes] = useState<Array<NoteProps>>();
 
   useEffect(() => {
     getAllNotesDownloaded().then(notesName => setNotes(notesName));
-  }, []);
+  }, [notes]);
 
   return (
     <SafeAreaView style={{flex: 1}}>
+      <Header screenName="Minhas Notas" backButton />
       <Box width="100%" height="100%" backgroundColor="bg_light" pt="l" px="s">
-        <BackButton navigation={navigation} />
-        <Box width="100%" alignItems="center" mt="l">
-          <Text variant="header">Estas são todas as suas notas baixadas</Text>
-        </Box>
+        <Text variant="info">
+          Clique em uma de suas notas para visualizar o PDF, segure para
+          compartilhar.
+        </Text>
         <Box
           width="100%"
           height="100%"

@@ -1,9 +1,13 @@
 import React from "react";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import Entry from "../screens/Entry";
 import QRCode from "../screens/QRCode";
 import MyNotes from "../screens/MyNotes";
 import PDFView from "../screens/PDFView";
+import TabNavigation from "./TabNavigation";
+
+function HomeTabs() {
+  return <TabNavigation />;
+}
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +17,7 @@ export default function Routes() {
       <Stack.Screen
         options={{headerShown: false}}
         name="entry"
-        component={Entry}
+        component={HomeTabs}
       />
       <Stack.Screen
         options={{headerShown: false}}

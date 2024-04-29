@@ -31,7 +31,7 @@ export const textVariants = {
   },
   header: {
     color: "text_dark",
-    fontFamily: "Inter-SemiBold",
+    fontFamily: "Inter-Bold",
     fontSize: 30,
   },
   inputText: {
