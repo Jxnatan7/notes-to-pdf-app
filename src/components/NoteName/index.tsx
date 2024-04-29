@@ -1,9 +1,8 @@
-import {TouchableOpacity} from "react-native";
-import {Box, Text} from "../../theme";
-import {useNavigation} from "@react-navigation/native";
-import {shareNote} from "../../services/shareNote";
+import { TouchableOpacity } from "react-native";
+import { Box, Text } from "../../theme";
+import { useNavigation } from "@react-navigation/native";
+import { shareNote } from "../../services/shareNote";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import {useState} from "react";
 
 export const NoteName = ({
   name,
@@ -16,7 +15,7 @@ export const NoteName = ({
 
   const handlePDFViewNavigation = (pdfFilePath: string) => {
     // @ts-ignore
-    navigation.navigate("pdf-view", {pdfFilePath: pdfFilePath});
+    navigation.navigate("pdf-view", { pdfFilePath: pdfFilePath });
   };
 
   return (

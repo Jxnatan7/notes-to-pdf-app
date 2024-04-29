@@ -1,7 +1,6 @@
 import React from "react";
-import {Box, Text, ThemeProps} from "../../theme";
-import {TouchableOpacity} from "react-native";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import { Box, Text, ThemeProps } from "../../theme";
+import { TouchableOpacity } from "react-native";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
 type ThemeColor = keyof ThemeProps["colors"];
@@ -11,10 +10,9 @@ export type MainButtonProps = {
   color: ThemeColor;
   bg: ThemeColor;
   action: () => void;
-  icon?: string;
 };
 
-export function MainButton({text, color, bg, action, icon}: MainButtonProps) {
+export function MainButton({ text, color, bg, action }: MainButtonProps) {
   return (
     <TouchableOpacity activeOpacity={0.8} onPress={action}>
       <Box

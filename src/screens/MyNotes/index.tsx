@@ -1,12 +1,10 @@
-import {SafeAreaView} from "react-native-safe-area-context";
-import {Box, Text} from "../../theme";
-import {FlatList, TouchableOpacity} from "react-native";
-import {useEffect, useState} from "react";
-import {getAllNotesDownloaded} from "../../services/getAllNotesDownloaded";
-import {BackButton} from "../../components/BackButton";
-import {useNavigation} from "@react-navigation/native";
-import {NoteName} from "../../components/NoteName";
-import {Header} from "../../components/Header";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Box, Text } from "../../theme";
+import { FlatList, TouchableOpacity } from "react-native";
+import { useEffect, useState } from "react";
+import { getAllNotesDownloaded } from "../../services/getAllNotesDownloaded";
+import { NoteName } from "../../components/NoteName";
+import { Header } from "../../components/Header";
 
 type NoteProps = {
   fileName: string;
@@ -21,7 +19,7 @@ export default function MyNotes() {
   }, [notes]);
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <Header screenName="Minhas Notas" backButton />
       <Box width="100%" height="100%" backgroundColor="bg_light" pt="l" px="s">
         <Text variant="info">
@@ -35,8 +33,8 @@ export default function MyNotes() {
           alignItems="center">
           {notes && (
             <FlatList
-              style={{width: "100%", marginTop: 50}}
-              contentContainerStyle={{height: "auto"}}
+              style={{ width: "100%", marginTop: 50 }}
+              contentContainerStyle={{ height: "auto" }}
               data={notes}
               renderItem={data => (
                 <NoteName
