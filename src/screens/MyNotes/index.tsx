@@ -34,7 +34,7 @@ export default function MyNotes() {
           {notes && (
             <FlatList
               style={{ width: "100%", marginTop: 50 }}
-              contentContainerStyle={{ height: "auto" }}
+              contentContainerStyle={{ height: "auto", paddingVertical: 40 }}
               data={notes}
               renderItem={data => (
                 <NoteName
