@@ -1,9 +1,10 @@
-import {HttpStatusCode} from "axios";
+import { HttpStatusCode } from "axios";
 import api from "../config/axiosConfig";
 import RNFS from "react-native-fs";
-import {getNoteName} from "./getNoteName";
+import { getNoteName } from "./getNoteName";
 import Toast from "react-native-toast-message";
-import {Alert} from "react-native";
+import { Alert } from "react-native";
+import { requestStoragePermission } from "./requestPermissionStorage";
 
 const showSuccessToast = () => {
   Toast.show({
@@ -26,6 +27,7 @@ const showErrorToast = () => {
 
 export const downloadNotePDF = async (url: string) => {
   try {
+    await requestStoragePermission();
     const response = await api.get(`/note-to-pdf?url=${url}`);
     const fileName = getNoteName();
 
